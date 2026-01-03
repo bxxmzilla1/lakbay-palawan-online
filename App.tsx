@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ListingPage from './pages/ListingPage';
 import DetailsPage from './pages/DetailsPage';
 import ContactPage from './pages/ContactPage';
+import LocationCarRentalPage from './pages/LocationCarRentalPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -31,6 +32,11 @@ const App: React.FC = () => {
             <Route path="/destinations" element={<ListingPage type="destination" />} />
             <Route path="/tours" element={<ListingPage type="tour" />} />
             <Route path="/contact" element={<ContactPage />} />
+            
+            {/* Location-based Car Rental Pages */}
+            <Route path="/car-rental/el-nido" element={<LocationCarRentalPage location="el-nido" />} />
+            <Route path="/car-rental/coron" element={<LocationCarRentalPage location="coron" />} />
+            <Route path="/car-rental/puerto-princesa" element={<LocationCarRentalPage location="puerto-princesa" />} />
             
             {/* Details Pages */}
             <Route path="/car/:id" element={<DetailsPage type="car" />} />

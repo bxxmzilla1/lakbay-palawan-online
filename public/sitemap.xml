@@ -18,7 +18,29 @@
 
   <!-- Cars Page -->
   <url>
-    <loc>https://www.lakbaypalawan.online/#/cars</loc>
+    <loc>https://www.lakbaypalawan.online/#/car-rental</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Location-based Car Rental Pages -->
+  <url>
+    <loc>https://www.lakbaypalawan.online/#/car-rental/el-nido</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.lakbaypalawan.online/#/car-rental/coron</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.lakbaypalawan.online/#/car-rental/puerto-princesa</loc>
     <lastmod>2026-01-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
