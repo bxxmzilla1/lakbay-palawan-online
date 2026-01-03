@@ -2,20 +2,6 @@ import { Car, Destination, Tour } from './types';
 
 export const CARS: Car[] = [
   {
-    id: 'toyota-hilux-gr',
-    name: 'Toyota Hilux GR 4x4',
-    type: 'Pick-up',
-    seats: 5,
-    pricePerDay: 3500,
-    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_hilux_gr.png?raw=true',
-    fuel: 'Diesel',
-    transmission: 'Automatic',
-    tags: ['Top Pick'],
-    description: 'The Gazoo Racing edition of the Hilux, featuring sportier suspension and enhanced aesthetics.',
-    carwashFee: 300,
-    availability: 'Self-drive or with driver'
-  },
-  {
     id: 'toyota-wigo',
     name: 'Toyota Wigo',
     type: 'Compact',
@@ -41,6 +27,20 @@ export const CARS: Car[] = [
     tags: ['Top Pick'],
     description: 'The ultimate family vehicle. Powerful diesel engine and spacious seating for your entire group.',
     carwashFee: 250,
+    availability: 'Self-drive or with driver'
+  },
+  {
+    id: 'toyota-hilux-gr',
+    name: 'Toyota Hilux GR 4x4',
+    type: 'Pick-up',
+    seats: 5,
+    pricePerDay: 3500,
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_hilux_gr.png?raw=true',
+    fuel: 'Diesel',
+    transmission: 'Automatic',
+    tags: ['Top Pick'],
+    description: 'The Gazoo Racing edition of the Hilux, featuring sportier suspension and enhanced aesthetics.',
+    carwashFee: 300,
     availability: 'Self-drive or with driver'
   },
   {
