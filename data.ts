@@ -17,7 +17,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-wigo',
-    name: 'Toyota Wigo A/T',
+    name: 'Toyota Wigo',
     type: 'Compact',
     seats: '4-5',
     pricePerDay: 1500,
@@ -31,7 +31,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-innova',
-    name: 'Toyota Innova A/T',
+    name: 'Toyota Innova',
     type: 'MPV',
     seats: '7-8',
     pricePerDay: 2800,
@@ -45,7 +45,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-vios',
-    name: 'Toyota Vios A/T',
+    name: 'Toyota Vios',
     type: 'Sedan',
     seats: '4-5',
     pricePerDay: 1500,
@@ -59,7 +59,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'mitsubishi-mirage',
-    name: 'Mitsubishi Mirage G4 A/T',
+    name: 'Mitsubishi Mirage G4',
     type: 'Sedan',
     seats: '4-5',
     pricePerDay: 1500,
@@ -73,7 +73,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-raize',
-    name: 'Toyota Raize A/T',
+    name: 'Toyota Raize',
     type: 'Sub-Compact SUV',
     seats: '4-5',
     pricePerDay: 1800,
@@ -87,7 +87,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-veloz',
-    name: 'Toyota Veloz A/T',
+    name: 'Toyota Veloz',
     type: 'MPV',
     seats: '7-8',
     pricePerDay: 2800,
@@ -101,7 +101,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'mitsubishi-xpander',
-    name: 'Mitsubishi Xpander A/T',
+    name: 'Mitsubishi Xpander',
     type: 'MPV',
     seats: '7-8',
     pricePerDay: 2800,
