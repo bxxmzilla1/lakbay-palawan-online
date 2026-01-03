@@ -169,15 +169,72 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
     switch(type) {
       case 'car':
         return (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {CARS.map(car => (
-              <CarCard 
-                key={car.id} 
-                car={car} 
-                onViewDetails={() => setSelectedCar(car)}
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {CARS.map(car => (
+                <CarCard 
+                  key={car.id} 
+                  car={car} 
+                  onViewDetails={() => setSelectedCar(car)}
+                />
+              ))}
+            </div>
+
+            {/* Private Van Transfer Pricing Table */}
+            <div className="mt-24">
+              <div className="text-center mb-12">
+                <span className="text-[#8B6F47] font-medium tracking-wider text-xs uppercase mb-2 block">Additional Service</span>
+                <h2 className="text-3xl md:text-4xl font-medium text-[#5D4037] tracking-tight mb-3">Private Van Transfer</h2>
+                <p className="text-[#A1887F] max-w-2xl mx-auto">Door-to-door van service to popular destinations across Palawan</p>
+              </div>
+
+              <div className="bg-white rounded-[2.5rem] shadow-xl border border-[#5D4037]/5 overflow-hidden max-w-4xl mx-auto">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-[#5D4037]">
+                        <th className="px-8 py-5 text-left text-white font-semibold tracking-wide text-base">Destination</th>
+                        <th className="px-8 py-5 text-right text-white font-semibold tracking-wide text-base">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">El Nido</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱7,000.00</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">Taytay</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱6,500.00</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">San Vicente</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱6,500.00</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">Roxas</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱6,000.00</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">Narra</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱5,000.00</td>
+                      </tr>
+                      <tr className="border-b border-[#F8F5F2] hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">Brookes Point</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱6,000.00</td>
+                      </tr>
+                      <tr className="hover:bg-[#FCFAF8] transition-colors">
+                        <td className="px-8 py-5 text-[#5D4037] font-medium">Buliluyan (Port to Balabac)</td>
+                        <td className="px-8 py-5 text-right text-[#5D4037] font-bold text-lg">₱8,000.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="bg-[#F8F5F2] px-8 py-4 text-center border-t border-[#5D4037]/10">
+                  <p className="text-sm text-[#A1887F] italic">Prices are per van (not per person). Contact us for bookings and availability.</p>
+                </div>
+              </div>
+            </div>
+          </>
         );
       case 'destination':
         return (
