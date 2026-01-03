@@ -16,36 +16,90 @@ const Home: React.FC = () => {
   // We take the top 3: El Nido (Requested), PPS (Iconic), and Coron
   const popularTours = [elNidoBestSeller, ppsBestSeller, coronBestSeller].filter(Boolean) as Tour[];
 
-  // Structured Data for Homepage - TravelAgency schema
+  // Structured Data for Homepage - LocalBusiness with CarRental emphasis
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
+    '@type': 'LocalBusiness',
+    '@id': 'https://www.lakbaypalawan.online/#organization',
     name: 'Lakbay Palawan',
-    description: 'Book the best Palawan car rentals, tours, island hopping adventures, and destinations in El Nido, Coron, and Puerto Princesa with Lakbay Palawan.',
-    url: 'https://bxxmzilla1.github.io/lakbay-palawan-online',
+    description: 'Premier car rental service in Palawan with tours and destination packages. Self-drive and with-driver options available.',
+    url: 'https://www.lakbaypalawan.online',
     logo: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/hero.jpg?raw=true',
     image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/hero.jpg?raw=true',
+    sameAs: 'https://share.google/WGd7diPqVe0W7dkfq',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Puerto Princesa',
       addressRegion: 'Palawan',
-      addressCountry: 'Philippines'
+      addressCountry: 'PH'
     },
-    areaServed: [
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '9.7392',
+      longitude: '118.7353'
+    },
+    areaServed: {
+      '@type': 'State',
+      name: 'Palawan',
+      containsPlace: [
+        { '@type': 'City', name: 'Puerto Princesa' },
+        { '@type': 'City', name: 'El Nido' },
+        { '@type': 'City', name: 'Coron' },
+        { '@type': 'City', name: 'San Vicente' },
+        { '@type': 'City', name: 'Taytay' }
+      ]
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Car Rentals & Travel Services',
+      itemListElement: [
+        {
+          '@type': 'OfferCatalog',
+          name: 'Car Rentals in Palawan',
+          itemListElement: {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Self-Drive and With-Driver Car Rentals',
+              serviceType: 'Car Rental',
+              description: 'Affordable car rentals with self-drive and with-driver options across Palawan'
+            }
+          }
+        },
+        {
+          '@type': 'OfferCatalog',
+          name: 'Tour Packages',
+          itemListElement: {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'TouristTrip',
+              name: 'Palawan Tours & Island Hopping',
+              description: 'Guided tour packages for El Nido, Coron, and Puerto Princesa'
+            }
+          }
+        }
+      ]
+    },
+    makesOffer: [
       {
-        '@type': 'City',
-        name: 'Puerto Princesa'
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          serviceType: 'CarRental',
+          name: 'Car Rentals in Palawan',
+          description: 'Self-drive and with-driver car rental services'
+        }
       },
       {
-        '@type': 'City',
-        name: 'El Nido'
-      },
-      {
-        '@type': 'City',
-        name: 'Coron'
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          serviceType: 'TouristInformationCenter',
+          name: 'Tours and Destinations',
+          description: 'Island hopping, tours, and destination packages'
+        }
       }
     ],
-    serviceType: ['Car Rental', 'Tour Packages', 'Island Hopping', 'Travel Services'],
     telephone: '+63 993 538 6606',
     priceRange: '$$',
     openingHours: 'Mo-Su 08:00-22:00'

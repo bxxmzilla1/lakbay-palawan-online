@@ -61,51 +61,70 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
           canonical: '/car-rental',
           structuredData: {
             '@context': 'https://schema.org',
-            '@type': 'Service',
-            serviceType: 'Car Rental',
-            name: 'Car Rental Palawan',
-            description: 'Affordable car rental Palawan with self-drive and driver options. Available in Puerto Princesa, El Nido, and Coron.',
+            '@type': 'CarRental',
+            '@id': 'https://www.lakbaypalawan.online/car-rental',
+            name: 'Lakbay Palawan Car Rentals',
+            description: 'Affordable car rental service in Palawan with self-drive and with-driver options. Choose from compact cars, SUVs, and vans.',
+            url: 'https://www.lakbaypalawan.online/#/car-rental',
             provider: {
               '@type': 'LocalBusiness',
+              '@id': 'https://www.lakbaypalawan.online/#organization',
               name: 'Lakbay Palawan',
+              sameAs: 'https://share.google/WGd7diPqVe0W7dkfq',
+              url: 'https://www.lakbaypalawan.online',
+              telephone: '+63 993 538 6606',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'Puerto Princesa',
                 addressRegion: 'Palawan',
-                addressCountry: 'Philippines'
+                addressCountry: 'PH'
+              },
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: '9.7392',
+                longitude: '118.7353'
               }
             },
-            areaServed: [
-              {
-                '@type': 'City',
-                name: 'Puerto Princesa'
+            areaServed: {
+              '@type': 'State',
+              name: 'Palawan, Philippines',
+              containsPlace: [
+                { '@type': 'City', name: 'Puerto Princesa' },
+                { '@type': 'City', name: 'El Nido' },
+                { '@type': 'City', name: 'Coron' },
+                { '@type': 'City', name: 'San Vicente' },
+                { '@type': 'City', name: 'Taytay' },
+                { '@type': 'City', name: 'Roxas' },
+                { '@type': 'City', name: 'Narra' }
+              ]
+            },
+            serviceType: 'Car Rental',
+            serviceOutput: {
+              '@type': 'Product',
+              category: 'Vehicle Rental',
+              description: 'Self-drive and with-driver car rental services'
+            },
+            offers: CARS.slice(0, 10).map((car, index) => ({
+              '@type': 'Offer',
+              position: index + 1,
+              itemOffered: {
+                '@type': 'Car',
+                name: car.name,
+                description: car.description,
+                image: car.image,
+                vehicleConfiguration: car.type,
+                fuelType: car.fuelType || 'Gasoline',
+                numberOfDoors: 4,
+                seatingCapacity: car.capacity
               },
-              {
-                '@type': 'City',
-                name: 'El Nido'
-              },
-              {
-                '@type': 'City',
-                name: 'Coron'
+              price: car.pricePerDay,
+              priceCurrency: 'PHP',
+              availability: 'https://schema.org/InStock',
+              eligibleRegion: {
+                '@type': 'State',
+                name: 'Palawan'
               }
-            ],
-            hasOfferCatalog: {
-              '@type': 'OfferCatalog',
-              name: 'Palawan Car Rental Fleet',
-              itemListElement: CARS.slice(0, 10).map((car, index) => ({
-                '@type': 'Offer',
-                position: index + 1,
-                itemOffered: {
-                  '@type': 'Product',
-                  name: car.name,
-                  description: car.description,
-                  image: car.image
-                },
-                price: car.pricePerDay,
-                priceCurrency: 'PHP',
-                availability: 'https://schema.org/InStock'
-              }))
-            }
+            }))
           }
         };
       case 'destination':
