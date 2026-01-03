@@ -101,7 +101,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-hilux-g',
-    name: 'Toyota Hilux 4x2 A/T',
+    name: 'Toyota Hilux 4x2',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -115,7 +115,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'nissan-navara-silver',
-    name: 'Nissan Navara 4x2 A/T',
+    name: 'Nissan Navara 4x2',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -129,7 +129,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'nissan-navara-white',
-    name: 'Nissan Navara 4x2 A/T',
+    name: 'Nissan Navara 4x2',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -143,7 +143,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-hilux-gr',
-    name: 'Toyota Hilux GR 4x4 A/T',
+    name: 'Toyota Hilux GR 4x4',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3500,
@@ -157,7 +157,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'ford-ranger-4x4',
-    name: 'Ford Ranger 4x4 A/T',
+    name: 'Ford Ranger 4x4',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3500,
