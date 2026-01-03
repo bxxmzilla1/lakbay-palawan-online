@@ -1,0 +1,7 @@
+{
+  "name": "Lakbay Palawan",
+  "description": "A premium travel and car rental service for exploring the beautiful islands of Palawan with ease.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
