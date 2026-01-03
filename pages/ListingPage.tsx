@@ -55,7 +55,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
     switch(type) {
       case 'car':
         return {
-          title: 'Car Rental Palawan | Affordable Rates',
+          title: 'Car Rentals in Palawan | Affordable & Self-Drive Options',
           description: 'Affordable car rental Palawan with self-drive options. Choose from compact cars, SUVs, and vans in Puerto Princesa, El Nido, and Coron.',
           keywords: 'car rental palawan, affordable car rental palawan, palawan car rental, rent a car palawan, el nido car rental, coron car rental, puerto princesa car rental, self drive car rental palawan',
           canonical: '/car-rental',
