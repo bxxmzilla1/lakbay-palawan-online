@@ -12,7 +12,7 @@ interface SEOProps {
   noindex?: boolean;
 }
 
-const DEFAULT_TITLE = 'Lakbay Palawan | Tours, Destinations, Car Rentals in Palawan';
+const DEFAULT_TITLE = 'Lakbay Palawan Car Rentals | Tours and Destinations in Palawan';
 const DEFAULT_DESCRIPTION = 'Book the best Palawan car rentals, tours, island hopping adventures, and destinations in El Nido, Coron, and Puerto Princesa with Lakbay Palawan.';
 const DEFAULT_OG_IMAGE = 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/hero.jpg?raw=true';
 const BASE_URL = 'https://bxxmzilla1.github.io/lakbay-palawan-online';
