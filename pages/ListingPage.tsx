@@ -55,9 +55,9 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
     switch(type) {
       case 'car':
         return {
-          title: 'Car Rentals in Palawan | Affordable & Self-Drive Options',
-          description: 'Affordable car rental Palawan with self-drive options. Choose from compact cars, SUVs, and vans in Puerto Princesa, El Nido, and Coron.',
-          keywords: 'car rental palawan, affordable car rental palawan, palawan car rental, rent a car palawan, el nido car rental, coron car rental, puerto princesa car rental, self drive car rental palawan',
+          title: 'Car Rentals in Palawan | Airport & Self-Drive Options',
+          description: 'Airport car rental in Palawan with self-drive options. Available at Puerto Princesa Airport, El Nido, and Coron. Affordable rates for SUVs, vans, and sedans.',
+          keywords: 'car rental palawan, airport car rental palawan, palawan car rental, rent a car palawan, el nido car rental, coron car rental, puerto princesa airport car rental, self drive car rental palawan',
           canonical: '/car-rental',
           structuredData: {
             '@context': 'https://schema.org',
@@ -95,7 +95,18 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
                 { '@type': 'City', name: 'San Vicente' },
                 { '@type': 'City', name: 'Taytay' },
                 { '@type': 'City', name: 'Roxas' },
-                { '@type': 'City', name: 'Narra' }
+                { '@type': 'City', name: 'Narra' },
+                {
+                  '@type': 'Airport',
+                  name: 'Puerto Princesa International Airport',
+                  iataCode: 'PPS',
+                  address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: 'Puerto Princesa',
+                    addressRegion: 'Palawan',
+                    addressCountry: 'PH'
+                  }
+                }
               ]
             },
             serviceType: 'Car Rental',
