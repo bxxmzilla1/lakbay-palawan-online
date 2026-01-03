@@ -5,6 +5,7 @@ import { CARS, DESTINATIONS, TOURS } from '../data';
 import { Car, Destination, Tour } from '../types';
 import { TourCard } from './ToursPage';
 import SEO from '../components/SEO';
+import CustomerReviews from '../components/CustomerReviews';
 
 const Home: React.FC = () => {
   // Curate top 3 best sellers representing different destinations
@@ -244,6 +245,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Customer Reviews */}
+      <CustomerReviews />
     </div>
     </>
   );

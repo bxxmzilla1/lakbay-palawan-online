@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, MessageCircle, ArrowRight, MapPin, Clock, ShieldCheck } from 'lucide-react';
 import SEO from '../components/SEO';
+import CustomerReviews from '../components/CustomerReviews';
 
 const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +50,7 @@ const ContactPage: React.FC = () => {
         canonical="/contact"
         structuredData={structuredData}
       />
-      <div className="animate-in fade-in duration-500">
+    <div className="animate-in fade-in duration-500">
       {/* Premium Dark Banner */}
       <div className="bg-[#5D4037] pt-40 pb-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}></div>
@@ -107,6 +108,9 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Customer Reviews */}
+      <CustomerReviews />
     </div>
     </>
   );
