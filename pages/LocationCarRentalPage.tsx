@@ -92,36 +92,68 @@ const LocationCarRentalPage: React.FC<LocationCarRentalPageProps> = ({ location 
         serviceType: 'Car Rental',
         serviceOutput: {
           '@type': 'Product',
+          name: `Car Rentals in ${locationInfo.displayName}`,
           category: 'Vehicle Rental',
           description: `Self-drive and with-driver car rental services in ${locationInfo.displayName}`
         },
-        offers: CARS.slice(0, 10).map((car, index) => ({
-          '@type': 'Offer',
-          position: index + 1,
-          itemOffered: {
-            '@type': 'Car',
-            name: car.name,
-            description: car.description,
-            image: car.image,
-            vehicleConfiguration: car.type,
-            fuelType: car.fuelType || 'Gasoline',
-            numberOfDoors: 4,
-            seatingCapacity: car.capacity
-          },
-          price: car.pricePerDay,
-          priceCurrency: 'PHP',
-          availability: 'https://schema.org/InStock',
-          availableAtOrFrom: {
-            '@type': 'Place',
-            name: locationInfo.displayName,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: locationInfo.displayName,
-              addressRegion: 'Palawan',
-              addressCountry: 'PH'
+        offers: [
+          {
+            '@type': 'Offer',
+            name: `Car Rental Services in ${locationInfo.displayName}`,
+            description: `Self-drive and with-driver car rental services in ${locationInfo.displayName}`,
+            priceCurrency: 'PHP',
+            price: '1500',
+            priceSpecification: {
+              '@type': 'PriceSpecification',
+              price: '1500',
+              priceCurrency: 'PHP',
+              valueAddedTaxIncluded: false
+            },
+            availability: 'https://schema.org/InStock',
+            url: `https://www.lakbaypalawan.online/#/car-rental/${location}`,
+            availableAtOrFrom: {
+              '@type': 'Place',
+              name: locationInfo.displayName,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: locationInfo.displayName,
+                addressRegion: 'Palawan',
+                addressCountry: 'PH'
+              }
+            },
+            seller: {
+              '@type': 'Organization',
+              name: 'Lakbay Palawan'
             }
-          }
-        }))
+          },
+          ...CARS.slice(0, 10).map((car, index) => ({
+            '@type': 'Offer',
+            position: index + 1,
+            itemOffered: {
+              '@type': 'Car',
+              name: car.name,
+              description: car.description,
+              image: car.image,
+              vehicleConfiguration: car.type,
+              fuelType: car.fuelType || 'Gasoline',
+              numberOfDoors: 4,
+              seatingCapacity: car.capacity
+            },
+            price: car.pricePerDay,
+            priceCurrency: 'PHP',
+            availability: 'https://schema.org/InStock',
+            availableAtOrFrom: {
+              '@type': 'Place',
+              name: locationInfo.displayName,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: locationInfo.displayName,
+                addressRegion: 'Palawan',
+                addressCountry: 'PH'
+              }
+            }
+          }))
+        ]
       }
     };
   };

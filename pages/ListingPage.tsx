@@ -112,30 +112,52 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
             serviceType: 'Car Rental',
             serviceOutput: {
               '@type': 'Product',
+              name: 'Car Rentals in Palawan',
               category: 'Vehicle Rental',
-              description: 'Self-drive and with-driver car rental services'
+              description: 'Self-drive and with-driver car rental services in Palawan'
             },
-            offers: CARS.slice(0, 10).map((car, index) => ({
-              '@type': 'Offer',
-              position: index + 1,
-              itemOffered: {
-                '@type': 'Car',
-                name: car.name,
-                description: car.description,
-                image: car.image,
-                vehicleConfiguration: car.type,
-                fuelType: car.fuelType || 'Gasoline',
-                numberOfDoors: 4,
-                seatingCapacity: car.capacity
+            offers: [
+              {
+                '@type': 'Offer',
+                name: 'Car Rental Services',
+                description: 'Self-drive and with-driver car rental services in Palawan',
+                priceCurrency: 'PHP',
+                price: '1500',
+                priceSpecification: {
+                  '@type': 'PriceSpecification',
+                  price: '1500',
+                  priceCurrency: 'PHP',
+                  valueAddedTaxIncluded: false
+                },
+                availability: 'https://schema.org/InStock',
+                url: 'https://www.lakbaypalawan.online/#/car-rental',
+                seller: {
+                  '@type': 'Organization',
+                  name: 'Lakbay Palawan'
+                }
               },
-              price: car.pricePerDay,
-              priceCurrency: 'PHP',
-              availability: 'https://schema.org/InStock',
-              eligibleRegion: {
-                '@type': 'State',
-                name: 'Palawan'
-              }
-            }))
+              ...CARS.slice(0, 10).map((car, index) => ({
+                '@type': 'Offer',
+                position: index + 1,
+                itemOffered: {
+                  '@type': 'Car',
+                  name: car.name,
+                  description: car.description,
+                  image: car.image,
+                  vehicleConfiguration: car.type,
+                  fuelType: car.fuelType || 'Gasoline',
+                  numberOfDoors: 4,
+                  seatingCapacity: car.capacity
+                },
+                price: car.pricePerDay,
+                priceCurrency: 'PHP',
+                availability: 'https://schema.org/InStock',
+                eligibleRegion: {
+                  '@type': 'State',
+                  name: 'Palawan'
+                }
+              }))
+            ]
           }
         };
       case 'destination':
