@@ -4,6 +4,7 @@ import { MapPin, CalendarDays, Car as CarIcon, Search, ShieldCheck, Zap, Headpho
 import { CARS, DESTINATIONS, TOURS } from '../data';
 import { Car, Destination, Tour } from '../types';
 import { TourCard } from './ToursPage';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   // Curate top 3 best sellers representing different destinations
@@ -15,8 +16,51 @@ const Home: React.FC = () => {
   // We take the top 3: El Nido (Requested), PPS (Iconic), and Coron
   const popularTours = [elNidoBestSeller, ppsBestSeller, coronBestSeller].filter(Boolean) as Tour[];
 
+  // Structured Data for Homepage - TravelAgency schema
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: 'Lakbay Palawan',
+    description: 'Book the best Palawan car rentals, tours, island hopping adventures, and destinations in El Nido, Coron, and Puerto Princesa with Lakbay Palawan.',
+    url: 'https://bxxmzilla1.github.io/lakbay-palawan-online',
+    logo: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/hero.jpg?raw=true',
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/hero.jpg?raw=true',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Puerto Princesa',
+      addressRegion: 'Palawan',
+      addressCountry: 'Philippines'
+    },
+    areaServed: [
+      {
+        '@type': 'City',
+        name: 'Puerto Princesa'
+      },
+      {
+        '@type': 'City',
+        name: 'El Nido'
+      },
+      {
+        '@type': 'City',
+        name: 'Coron'
+      }
+    ],
+    serviceType: ['Car Rental', 'Tour Packages', 'Island Hopping', 'Travel Services'],
+    telephone: '+63 993 538 6606',
+    priceRange: '$$',
+    openingHours: 'Mo-Su 08:00-22:00'
+  };
+
   return (
-    <div className="animate-in fade-in duration-700">
+    <>
+      <SEO
+        title="Tours, Destinations, Car Rentals in Palawan"
+        description="Book the best Palawan car rentals, tours, island hopping adventures, and destinations in El Nido, Coron, and Puerto Princesa with Lakbay Palawan."
+        canonical="/"
+        keywords="Palawan car rental, El Nido tours, Coron tours, Puerto Princesa, Palawan destinations, island hopping Palawan, Palawan travel guide, Palawan booking"
+        structuredData={structuredData}
+      />
+      <div className="animate-in fade-in duration-700">
       {/* Hero */}
       <header className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -147,6 +191,7 @@ const Home: React.FC = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

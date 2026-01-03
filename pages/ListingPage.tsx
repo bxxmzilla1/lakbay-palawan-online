@@ -6,6 +6,7 @@ import { ResourceType, Tour, Destination, Car } from '../types';
 import TourModal from '../components/TourModal';
 import DestinationModal from '../components/DestinationModal';
 import CarModal from '../components/CarModal';
+import SEO from '../components/SEO';
 
 interface ListingPageProps {
   type: ResourceType;
@@ -47,6 +48,121 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
       ? TOURS 
       : TOURS.filter(tour => tour.destinationId === activeTab);
   }, [activeTab, type]);
+
+  // Generate SEO metadata based on type
+  const getSEOMetadata = () => {
+    switch(type) {
+      case 'car':
+        return {
+          title: 'Car Rental Palawan | Affordable Rates',
+          description: 'Affordable car rental Palawan with self-drive options. Choose from compact cars, SUVs, and vans in Puerto Princesa, El Nido, and Coron.',
+          keywords: 'car rental palawan, affordable car rental palawan, palawan car rental, rent a car palawan, el nido car rental, coron car rental, puerto princesa car rental, self drive car rental palawan',
+          canonical: '/car-rental',
+          structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            serviceType: 'Car Rental',
+            name: 'Car Rental Palawan',
+            description: 'Affordable car rental Palawan with self-drive and driver options. Available in Puerto Princesa, El Nido, and Coron.',
+            provider: {
+              '@type': 'LocalBusiness',
+              name: 'Lakbay Palawan',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Puerto Princesa',
+                addressRegion: 'Palawan',
+                addressCountry: 'Philippines'
+              }
+            },
+            areaServed: [
+              {
+                '@type': 'City',
+                name: 'Puerto Princesa'
+              },
+              {
+                '@type': 'City',
+                name: 'El Nido'
+              },
+              {
+                '@type': 'City',
+                name: 'Coron'
+              }
+            ],
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: 'Palawan Car Rental Fleet',
+              itemListElement: CARS.slice(0, 10).map((car, index) => ({
+                '@type': 'Offer',
+                position: index + 1,
+                itemOffered: {
+                  '@type': 'Product',
+                  name: car.name,
+                  description: car.description,
+                  image: car.image
+                },
+                price: car.pricePerDay,
+                priceCurrency: 'PHP',
+                availability: 'https://schema.org/InStock'
+              }))
+            }
+          }
+        };
+      case 'destination':
+        return {
+          title: 'Best Palawan Destinations | El Nido, Coron, Puerto Princesa Travel Guide',
+          description: 'Discover the most beautiful destinations in Palawan. Explore El Nido, Coron, Puerto Princesa, and Balabac. Complete travel guide with tours and activities.',
+          keywords: 'Palawan destinations, El Nido Palawan, Coron Palawan, Puerto Princesa, Palawan travel guide, Palawan islands, best places Palawan',
+          canonical: '/destinations',
+          structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Palawan Destinations',
+            description: 'Top destinations to visit in Palawan',
+            itemListElement: DESTINATIONS.map((dest, index) => ({
+              '@type': 'TouristDestination',
+              position: index + 1,
+              name: dest.name,
+              description: dest.description,
+              image: dest.image,
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: dest.name,
+                addressRegion: 'Palawan',
+                addressCountry: 'Philippines'
+              }
+            }))
+          }
+        };
+      case 'tour':
+        return {
+          title: 'Palawan Tour Packages | Island Hopping, El Nido, Coron Tours',
+          description: 'Book the best Palawan tour packages including island hopping, El Nido tours, Coron tours, and Puerto Princesa Underground River. All-inclusive packages with expert guides.',
+          keywords: 'Palawan tours, El Nido tours, Coron tours, island hopping Palawan, Palawan tour packages, Puerto Princesa tours, Palawan travel packages',
+          canonical: '/tours',
+          structuredData: {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Palawan Tour Packages',
+            description: 'Curated tour packages for Palawan destinations',
+            itemListElement: TOURS.slice(0, 10).map((tour, index) => ({
+              '@type': 'TouristTrip',
+              position: index + 1,
+              name: tour.name,
+              description: tour.itinerarySummary,
+              image: tour.image,
+              offers: {
+                '@type': 'Offer',
+                price: tour.price,
+                priceCurrency: 'PHP',
+                availability: 'https://schema.org/InStock'
+              }
+            }))
+          }
+        };
+    }
+  };
+
+  const seoMetadata = getSEOMetadata();
 
   const renderContent = () => {
     switch(type) {
@@ -116,7 +232,15 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
   };
 
   return (
-    <div className="animate-in fade-in duration-500">
+    <>
+      <SEO
+        title={seoMetadata.title}
+        description={seoMetadata.description}
+        keywords={seoMetadata.keywords}
+        canonical={seoMetadata.canonical}
+        structuredData={seoMetadata.structuredData}
+      />
+      <div className="animate-in fade-in duration-500">
       {/* Dark Theme Banner */}
       <div className="bg-[#5D4037] pt-40 pb-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}></div>
@@ -159,6 +283,7 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
         />
       )}
     </div>
+    </>
   );
 };
 

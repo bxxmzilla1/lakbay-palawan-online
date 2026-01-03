@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, MessageCircle, ArrowRight, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const WhatsAppIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -14,8 +15,41 @@ const ViberIcon = ({ size = 20 }: { size?: number }) => (
 );
 
 const ContactPage: React.FC = () => {
+  // Structured Data for Contact Page - LocalBusiness
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Lakbay Palawan',
+    description: 'Premium car rentals and tour packages in Palawan, Philippines',
+    url: 'https://bxxmzilla1.github.io/lakbay-palawan-online',
+    telephone: '+63 993 538 6606',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Puerto Princesa',
+      addressRegion: 'Palawan',
+      addressCountry: 'Philippines'
+    },
+    openingHours: 'Mo-Su 08:00-22:00',
+    priceRange: '$$',
+    areaServed: {
+      '@type': 'State',
+      name: 'Palawan'
+    },
+    sameAs: [
+      'https://www.facebook.com/profile.php?id=61580669355444'
+    ]
+  };
+
   return (
-    <div className="animate-in fade-in duration-500">
+    <>
+      <SEO
+        title="Contact Us | Book Your Palawan Adventure"
+        description="Contact Lakbay Palawan via Facebook Messenger, WhatsApp, or Viber. Get instant support for car rentals and tour bookings in Palawan. Available 7 days a week."
+        keywords="contact Lakbay Palawan, Palawan booking, Palawan customer service, Palawan travel support, WhatsApp Palawan, Viber Palawan"
+        canonical="/contact"
+        structuredData={structuredData}
+      />
+      <div className="animate-in fade-in duration-500">
       {/* Premium Dark Banner */}
       <div className="bg-[#5D4037] pt-40 pb-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')" }}></div>
@@ -74,6 +108,7 @@ const ContactPage: React.FC = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
