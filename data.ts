@@ -2,6 +2,20 @@ import { Car, Destination, Tour } from './types';
 
 export const CARS: Car[] = [
   {
+    id: 'toyota-hilux-gr',
+    name: 'Toyota Hilux GR 4x4',
+    type: 'Pick-up',
+    seats: 5,
+    pricePerDay: 3500,
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_hilux_gr.png?raw=true',
+    fuel: 'Diesel',
+    transmission: 'Automatic',
+    tags: ['Top Pick'],
+    description: 'The Gazoo Racing edition of the Hilux, featuring sportier suspension and enhanced aesthetics.',
+    carwashFee: 300,
+    availability: 'Self-drive or with driver'
+  },
+  {
     id: 'toyota-wigo',
     name: 'Toyota Wigo A/T',
     type: 'Compact',
@@ -10,9 +24,23 @@ export const CARS: Car[] = [
     image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_wigo.png?raw=true',
     fuel: 'Unleaded',
     transmission: 'Automatic',
-    tags: ['Fuel Efficient'],
+    tags: ['Top Pick'],
     description: 'A nimble and efficient compact car, perfect for navigating the city streets of Puerto Princesa.',
     carwashFee: 200,
+    availability: 'Self-drive or with driver'
+  },
+  {
+    id: 'toyota-innova',
+    name: 'Toyota Innova A/T',
+    type: 'MPV',
+    seats: '7-8',
+    pricePerDay: 2800,
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_innova.png?raw=true',
+    fuel: 'Diesel',
+    transmission: 'Automatic',
+    tags: ['Top Pick'],
+    description: 'The ultimate family vehicle. Powerful diesel engine and spacious seating for your entire group.',
+    carwashFee: 250,
     availability: 'Self-drive or with driver'
   },
   {
@@ -55,20 +83,6 @@ export const CARS: Car[] = [
     tags: ['Stylish'],
     description: 'A modern sub-compact SUV that blends style with extra ground clearance for Palawan roads.',
     carwashFee: 200,
-    availability: 'Self-drive or with driver'
-  },
-  {
-    id: 'toyota-innova',
-    name: 'Toyota Innova A/T',
-    type: 'MPV',
-    seats: '7-8',
-    pricePerDay: 2800,
-    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_innova.png?raw=true',
-    fuel: 'Diesel',
-    transmission: 'Automatic',
-    tags: ['Family Choice'],
-    description: 'The ultimate family vehicle. Powerful diesel engine and spacious seating for your entire group.',
-    carwashFee: 250,
     availability: 'Self-drive or with driver'
   },
   {
@@ -138,20 +152,6 @@ export const CARS: Car[] = [
     transmission: 'Automatic',
     tags: ['Smooth Ride'],
     description: 'A tough pickup with a surprisingly comfortable, car-like ride quality in clean white.',
-    carwashFee: 300,
-    availability: 'Self-drive or with driver'
-  },
-  {
-    id: 'toyota-hilux-gr',
-    name: 'Toyota Hilux GR 4x4',
-    type: 'Pick-up',
-    seats: 5,
-    pricePerDay: 3500,
-    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/toyota_hilux_gr.png?raw=true',
-    fuel: 'Diesel',
-    transmission: 'Automatic',
-    tags: ['Premium Sport'],
-    description: 'The Gazoo Racing edition of the Hilux, featuring sportier suspension and enhanced aesthetics.',
     carwashFee: 300,
     availability: 'Self-drive or with driver'
   },
