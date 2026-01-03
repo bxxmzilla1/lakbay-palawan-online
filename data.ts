@@ -31,11 +31,11 @@ export const CARS: Car[] = [
   },
   {
     id: 'mitsubishi-mirage',
-    name: 'Mitsubishi Mirage A/T',
+    name: 'Mitsubishi Mirage G4 A/T',
     type: 'Sedan',
     seats: '4-5',
     pricePerDay: 1500,
-    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/mitsubishi_xpander.png?raw=true',
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/mitsubishi_mirage_g4.png?raw=true',
     fuel: 'Unleaded',
     transmission: 'Automatic',
     tags: ['Economical'],
@@ -101,7 +101,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-hilux-g',
-    name: 'Toyota Hilux G A/T',
+    name: 'Toyota Hilux 4x2 A/T',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -115,7 +115,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'nissan-navara-silver',
-    name: 'Nissan Navara Silver A/T',
+    name: 'Nissan Navara 4x2 A/T',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -129,7 +129,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'nissan-navara-white',
-    name: 'Nissan Navara White A/T',
+    name: 'Nissan Navara 4x2 A/T',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3000,
@@ -143,7 +143,7 @@ export const CARS: Car[] = [
   },
   {
     id: 'toyota-hilux-gr',
-    name: 'Toyota Hilux GR A/T',
+    name: 'Toyota Hilux GR 4x4 A/T',
     type: 'Pick-up',
     seats: 5,
     pricePerDay: 3500,
