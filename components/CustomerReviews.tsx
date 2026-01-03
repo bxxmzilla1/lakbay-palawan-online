@@ -94,33 +94,47 @@ const CustomerReviews: React.FC = () => {
             }}
           >
             <div className="flex gap-5 pb-4 px-2">
-              {CUSTOMER_REVIEWS.map((review) => (
-                <div
-                  key={review.id}
-                  className="flex-none w-[80vw] md:w-[380px] snap-center"
-                >
-                  <div className="bg-white rounded-[2rem] p-6 shadow-lg border border-[#5D4037]/5 hover:shadow-xl transition-all h-full flex flex-col">
-                    {/* Reviewer Name and Stars */}
-                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#F8F5F2]">
-                      <h3 className="text-base font-semibold text-[#5D4037]">{review.reviewer}</h3>
-                      <div className="flex items-center gap-1">
-                        <div className="flex gap-0.5">
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i} className="text-[#D4AF37] text-sm">★</span>
-                          ))}
+              {CUSTOMER_REVIEWS.map((review) => {
+                // Calculate width based on review length
+                const reviewLength = review.review.length;
+                let cardWidth = 'w-[300px]'; // Base width
+                
+                if (reviewLength > 400) {
+                  cardWidth = 'w-[500px]'; // Extra wide for very long reviews
+                } else if (reviewLength > 250) {
+                  cardWidth = 'w-[420px]'; // Wide for long reviews
+                } else if (reviewLength > 150) {
+                  cardWidth = 'w-[360px]'; // Medium for medium reviews
+                }
+                
+                return (
+                  <div
+                    key={review.id}
+                    className={`flex-none ${cardWidth} snap-center`}
+                  >
+                    <div className="bg-white rounded-[2rem] p-6 shadow-lg border border-[#5D4037]/5 hover:shadow-xl transition-all h-[280px] flex flex-col">
+                      {/* Reviewer Name and Stars */}
+                      <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#F8F5F2]">
+                        <h3 className="text-base font-semibold text-[#5D4037]">{review.reviewer}</h3>
+                        <div className="flex items-center gap-1">
+                          <div className="flex gap-0.5">
+                            {[...Array(5)].map((_, i) => (
+                              <span key={i} className="text-[#D4AF37] text-sm">★</span>
+                            ))}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Review Text */}
-                    <div className="flex-1 overflow-y-auto">
-                      <p className="text-[#6B5B4D] leading-relaxed whitespace-pre-wrap text-sm">
-                        {review.review}
-                      </p>
+                      {/* Review Text */}
+                      <div className="flex-1 overflow-y-auto modal-scrollbar">
+                        <p className="text-[#6B5B4D] leading-relaxed whitespace-pre-wrap text-sm">
+                          {review.review}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
