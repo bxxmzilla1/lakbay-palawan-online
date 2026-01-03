@@ -211,7 +211,7 @@ export const CarCard: React.FC<{ car: Car; onViewDetails?: () => void }> = ({ ca
       {/* Header section */}
       <div className="flex justify-between items-start mb-6">
         <div>
-          <h3 className="text-2xl font-semibold text-[#5D4037] tracking-tight mb-0.5">{car.name.split(' ')[0]} {car.name.split(' ')[1]}</h3>
+          <h3 className="text-2xl font-semibold text-[#5D4037] tracking-tight mb-0.5">{car.name}</h3>
           <p className="text-sm text-[#A1887F] font-medium uppercase tracking-wide">{car.type} • {car.seats} Seater</p>
         </div>
         {car.tags.map(tag => (
