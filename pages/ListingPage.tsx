@@ -17,6 +17,7 @@ const TABS = [
   { id: 'puerto-princesa', label: 'Puerto Princesa' },
   { id: 'el-nido', label: 'El Nido' },
   { id: 'coron', label: 'Coron' },
+  { id: 'port-barton', label: 'Port Barton' },
   { id: 'balabac', label: 'Balabac' }
 ];
 

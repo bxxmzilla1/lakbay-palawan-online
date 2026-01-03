@@ -235,6 +235,15 @@ export const DESTINATIONS: Destination[] = [
     image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/pps-balabac.webp?raw=true',
     toursCount: 1,
     highlight: 'Untouched'
+  },
+  {
+    id: 'port-barton',
+    name: 'Port Barton',
+    tagline: 'Hidden Gem Paradise',
+    description: 'A peaceful beach town offering pristine islands, turtle encounters, and untouched coral reefs.',
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/puerto-princesa.jpg?raw=true',
+    toursCount: 1,
+    highlight: 'Hidden Gem'
   }
 ];
 
@@ -319,6 +328,40 @@ export const TOURS: Tour[] = [
     image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/pps-firefly-watching.jpg?raw=true',
     itinerarySummary: 'Experience a magical night on the river surrounded by thousands of fireflies.',
     destinationId: 'puerto-princesa'
+  },
+
+  // PORT BARTON
+  {
+    id: 'port-barton-island-tour',
+    name: 'Port Barton Island Tour',
+    duration: 'Full Day',
+    price: 1500,
+    includes: [
+      'Licensed Tour Guide/Crew',
+      'Island Entrance Fee',
+      'Lunch & Water',
+      '2-3 Islands visited per trip',
+      'Snorkeling Area',
+      'Turtle Stop',
+      'Sand Bar/Starfish Spot',
+      'Snorkel Gear',
+      'Life Vest',
+      'Drone Shot',
+      'GoPro'
+    ],
+    environmentalFee: 'P200 / pax',
+    destinationsList: [
+      'Exotic Island',
+      'Sandbar',
+      'Turtle Spot',
+      'Paradise Island',
+      'Maxima Island',
+      'Twin Reef'
+    ],
+    notes: 'Other offers available: Private Tour and Boat Hire',
+    image: 'https://github.com/bxxmzilla1/lakbay-palawan/blob/main/puerto-princesa.jpg?raw=true',
+    itinerarySummary: 'Explore the hidden gem of Port Barton with pristine islands, turtle encounters, and stunning coral reefs perfect for snorkeling.',
+    destinationId: 'port-barton'
   },
 
   // BALABAC
