@@ -93,16 +93,23 @@ const CustomerReviews: React.FC = () => {
               WebkitOverflowScrolling: 'touch'
             }}
           >
-            <div className="flex gap-6 pb-4 px-2">
+            <div className="flex gap-5 pb-4 px-2">
               {CUSTOMER_REVIEWS.map((review) => (
                 <div
                   key={review.id}
-                  className="flex-none w-[85vw] md:w-[450px] snap-center"
+                  className="flex-none w-[80vw] md:w-[380px] snap-center"
                 >
-                  <div className="bg-white rounded-[2rem] p-8 shadow-lg border border-[#5D4037]/5 hover:shadow-xl transition-all h-full flex flex-col">
-                    {/* Reviewer Name */}
-                    <div className="mb-4">
-                      <h3 className="text-lg font-semibold text-[#5D4037]">{review.reviewer}</h3>
+                  <div className="bg-white rounded-[2rem] p-6 shadow-lg border border-[#5D4037]/5 hover:shadow-xl transition-all h-full flex flex-col">
+                    {/* Reviewer Name and Stars */}
+                    <div className="flex items-center justify-between mb-4 pb-3 border-b border-[#F8F5F2]">
+                      <h3 className="text-base font-semibold text-[#5D4037]">{review.reviewer}</h3>
+                      <div className="flex items-center gap-1">
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-[#D4AF37] text-sm">★</span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
 
                     {/* Review Text */}
@@ -110,18 +117,6 @@ const CustomerReviews: React.FC = () => {
                       <p className="text-[#6B5B4D] leading-relaxed whitespace-pre-wrap text-sm">
                         {review.review}
                       </p>
-                    </div>
-
-                    {/* Decorative Element */}
-                    <div className="mt-6 pt-4 border-t border-[#F8F5F2]">
-                      <div className="flex items-center gap-2">
-                        <div className="flex gap-0.5">
-                          {[...Array(5)].map((_, i) => (
-                            <span key={i} className="text-[#D4AF37] text-lg">★</span>
-                          ))}
-                        </div>
-                        <span className="text-xs text-[#A1887F] font-medium">Verified Customer</span>
-                      </div>
                     </div>
                   </div>
                 </div>
