@@ -180,11 +180,11 @@ const ListingPage: React.FC<ListingPageProps> = ({ type }) => {
               ))}
             </div>
 
-            {/* Private Van Transfer Pricing Table */}
+            {/* Private Transfer Pricing Table */}
             <div className="mt-24">
               <div className="text-center mb-12">
                 <span className="text-[#8B6F47] font-medium tracking-wider text-xs uppercase mb-2 block">Additional Service</span>
-                <h2 className="text-3xl md:text-4xl font-medium text-[#5D4037] tracking-tight mb-3">Private Van Transfer</h2>
+                <h2 className="text-3xl md:text-4xl font-medium text-[#5D4037] tracking-tight mb-3">Private Transfer</h2>
                 <p className="text-[#A1887F] max-w-2xl mx-auto">Door-to-door van service to popular destinations across Palawan</p>
               </div>
 
