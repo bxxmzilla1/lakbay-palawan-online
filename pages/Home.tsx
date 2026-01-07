@@ -109,8 +109,8 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Car Rentals in Palawan | Tours & Destinations"
-        description="Book the best Palawan car rentals, tours, island hopping adventures, and destinations in El Nido, Coron, and Puerto Princesa with Lakbay Palawan."
+        title="Car Rental Palawan | Affordable Self-Drive & With Driver – Lakbay Palawan"
+        description="Looking for reliable car rental in Palawan? Lakbay Palawan offers self-drive and with-driver car rentals in El Nido, Puerto Princesa, and Coron. Book hassle-free today."
         canonical="/"
         keywords="Palawan car rental, El Nido tours, Coron tours, Puerto Princesa, Palawan destinations, island hopping Palawan, Palawan travel guide, Palawan booking"
         structuredData={structuredData}

@@ -56,8 +56,9 @@ const SEO: React.FC<SEOProps> = ({
   };
 
   // Construct full title with site name
+  // If title already contains "Lakbay Palawan", use it as-is
   const fullTitle = title 
-    ? `${title} | Lakbay Palawan`
+    ? (title.includes('Lakbay Palawan') ? title : `${title} | Lakbay Palawan`)
     : DEFAULT_TITLE;
 
   // Generate keywords string for meta tag
