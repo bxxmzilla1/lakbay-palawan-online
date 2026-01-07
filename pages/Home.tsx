@@ -159,6 +159,18 @@ const Home: React.FC = () => {
         </div>
       </header>
 
+      {/* SEO Content Section */}
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-medium text-[#5D4037] tracking-tight mb-6">
+            Car Rental in Palawan
+          </h2>
+          <p className="text-lg text-[#A1887F] leading-relaxed">
+            Lakbay Palawan provides reliable self-drive and with-driver car rental services across El Nido, Puerto Princesa, Coron, and nearby destinations. Whether for airport transfers or island trips, we make car rental in Palawan easy and hassle-free.
+          </p>
+        </div>
+      </section>
+
       {/* Car Rentals Highlight */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
